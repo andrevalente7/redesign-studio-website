@@ -6040,3 +6040,81 @@ body {
     text-align: center;
   }
 }
+
+/* Mobile performance: keep the premium dark style while reducing expensive paint work. */
+@media (max-width: 680px) {
+  .site-header,
+  .hero-console,
+  .console-row,
+  .proof-card,
+  .solved-map,
+  .weekly-loop article,
+  .department-card,
+  .scope-list details,
+  .exclusions-section .project-detail-grid article,
+  .work-rules article,
+  .initiative-grid article,
+  .comparison-table,
+  .pricing-card,
+  .timeline-grid article,
+  .growth-project-grid article,
+  .faq-list details,
+  .contact-section {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .logo-cloud img,
+  .logo-cloud img:nth-child(n) {
+    filter: grayscale(1) brightness(1.45) contrast(1.03);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.98rem, 8vw, 2.32rem);
+  }
+}
+
+/* Mobile viewport guard: prevent header and hero text from exceeding narrow screens. */
+@media (max-width: 680px) {
+  .site-header {
+    box-sizing: border-box;
+    width: calc(100vw - 64px) !important;
+    max-width: 362px !important;
+    overflow: hidden;
+  }
+
+  .nav-cta {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    max-width: min(100%, 332px) !important;
+    font-size: clamp(1.86rem, 7.2vw, 2.08rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero h1 em {
+    white-space: nowrap;
+  }
+
+  .hero-console {
+    width: calc(100vw - 64px) !important;
+    max-width: 362px !important;
+    overflow: hidden;
+  }
+
+  .hero-actions,
+  .hero-metrics {
+    width: calc(100vw - 64px) !important;
+    max-width: 362px !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .console-topbar p,
+  .console-row p {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
